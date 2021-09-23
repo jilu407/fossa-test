@@ -27,5 +27,3 @@ node {   def registry = 'registry.hub.docker.com/xxxxxx/test'
     }
    stage('Removing Local image') {
        sh "docker rmi $registry:$BUILD_NUMBER"   }}
-   }
-}
