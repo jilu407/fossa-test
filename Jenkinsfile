@@ -10,7 +10,7 @@ node {   def registry = 'registry.hub.docker.com/xxxxxx/test'
     }
     stage('Fossa Analyze') {
         sh 'curl -H \'Cache-Control: no-cache\' https://raw.githubusercontent.com/fossas/fossa-cli/master/install.sh | bash'
-        sh 'fossa init'
+        sh '/usr/local/bin/fossa init'
         sh 'FOSSA_API_KEY=XXXXXXXXXXXXXXXXXXXX fossa analyze'
     }
     stage('Building image') {
