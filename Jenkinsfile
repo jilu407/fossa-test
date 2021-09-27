@@ -16,28 +16,12 @@ steps{
               bash install.sh -b "$WORKSPACE/go/bin"
 			  echo "Fossa version:"
               fossa -v
+			  fossa init
+			  FOSSA_API_KEY=hfda8f189521174286901f6cd34eabfc7 fossa analyze
+			  
 		'''
 }
 }
-stage('Test') 
-{
-steps{
-echo "Testing the Code.........."
 
-}
-}
-stage('Compile') 
-{
-steps{
-echo "Compiling the Project.........."
-
-}
-}
-stage('Deploy') 
-{
-steps{
-echo "Deploying the Project.........."
-}
-}
 }
 }
