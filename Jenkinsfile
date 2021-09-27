@@ -18,11 +18,15 @@ pipeline {
       }
     }
     stage('Git') {
+	   steps {
         git 'https://github.com/jilu407/fossa-test.git'
     }
+	}
 	stage('install') {
+	  steps {
         sh ' npm install'
     }
+	}
 	
     
   
