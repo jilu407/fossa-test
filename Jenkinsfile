@@ -8,7 +8,6 @@ node {
     }
     stage('Fossa Analyze') {
         sh 'curl -H \'Cache-Control: no-cache\' https://raw.githubusercontent.com/fossas/fossa-cli/master/install.sh | bash'
-        sh '/usr/local/bin/fossa init && FOSSA_API_KEY=hfda8f189521174286901f6cd34eabfc7 fossa analyze'
-        sh 'FOSSA_API_KEY=hfda8f189521174286901f6cd34eabfc7 fossa analyze'
+        sh '/usr/local/bin/fossa init' && '/usr/local/bin/fossa FOSSA_API_KEY=hfda8f189521174286901f6cd34eabfc7 fossa analyze'
     }
     }
